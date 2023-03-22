@@ -12,21 +12,21 @@
 ## 1. 제작 기간 & 참여 인원
 - 2023.02.11 ~ 2023.02.25 
 - 팀 프로젝트(4명)
-- 담당 역할 : DB설계, MBTI테스트 , 사용자 여행지 추천(방명록)기능
+- 담당 역할 : DB설계, 카카오 로그인 api, 회원가입, 가계부 그래프 데이터 가공, 가계부 공유 기능 구현
 
 </br>
 
 ## 2. 사용 기술
 #### `Back-end`
-  - Node.js
-  - Express
-  - MySQL
-  - Sequelize
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white">
+  <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=Express&logoColor=white">
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=MySQL&logoColor=white">
+  <img src="https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white">
   
 </br>
 
 ## 3. ERD 설계
-<img width="764" src="https://user-images.githubusercontent.com/116782318/221226448-e03cc19f-1242-492b-8663-7688ef9b2b6d.png" width="800px">  
+<img src="https://user-images.githubusercontent.com/116782318/221226448-e03cc19f-1242-492b-8663-7688ef9b2b6d.png" width="800px">  
 
 </br>
 
