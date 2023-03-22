@@ -56,20 +56,20 @@ Click 👉 [API 전체 명세 링크](https://principled-gorgonzola-3a1.notion.s
 
 ### 5.1. 카카오 로그인 api
   
-- **카카오 토큰 발급** :pushpin: [코드 확인](https://github.com/nyondoo/momoa/blob/f1ee8b3df44be9bfad4b5c91c54810878003842f/server/controller/Ckakao.js#L22)
+- **카카오 토큰 발급** :pushpin: [코드 확인](https://github.com/nyondoo/momoa/blob/347d1d57ed1143cc73aa6b7cb4ca1ff381a2c043/server/controller/Ckakao.js#L22)
   - 카카오 서버로 인가코드를 담은 POST 비동기 요청을 날려 토큰을 요청합니다.
   - 응답으로 사용자 정보를 요청할 때 사용할 카카오 엑세스 토큰과 리프레시 토큰을 받습니다.
   
-- **사용자 정보 요청** :pushpin: [코드 확인](https://github.com/nyondoo/momoa/blob/f1ee8b3df44be9bfad4b5c91c54810878003842f/server/controller/Ckakao.js#L40)
+- **사용자 정보 요청** :pushpin: [코드 확인](https://github.com/nyondoo/momoa/blob/347d1d57ed1143cc73aa6b7cb4ca1ff381a2c043/server/controller/Ckakao.js#L40)
   - 헤더에 토큰을 담은 axios 요청을 날립니다.
   - 응답으로 사용자 정보를 가져옵니다.
   
-- **가입/로그인 처리** :pushpin: [코드 확인](https://github.com/nyondoo/momoa/blob/f1ee8b3df44be9bfad4b5c91c54810878003842f/server/controller/Ckakao.js#L52)
+- **가입/로그인 처리** :pushpin: [코드 확인](https://github.com/nyondoo/momoa/blob/347d1d57ed1143cc73aa6b7cb4ca1ff381a2c043/server/controller/Ckakao.js#L52)
   - 받아 온 사용자 정보를 DB에서 조회하여 가입 여부를 확인합니다.
   - 이미 가입된 경우 JWT토큰을 발행하여 로그인 처리 해주고, 가입되지 않은 경우 DB에 유저정보를 저장 후 JWT토큰을 발행합니다.
   - try-catch 문으로 예외처리 합니다.
 
-- **결과 응답** :pushpin: [코드 확인](https://github.com/nyondoo/momoa/blob/f1ee8b3df44be9bfad4b5c91c54810878003842f/server/controller/Ckakao.js#L146)
+- **결과 응답** :pushpin: [코드 확인](https://github.com/nyondoo/momoa/blob/347d1d57ed1143cc73aa6b7cb4ca1ff381a2c043/server/controller/Ckakao.js#L146)
   - jwt 엑세스 토큰은 localstorage에, 리프레쉬 토큰은 DB에 저장합니다.
   - 요청 처리 성공 시 메인 페이지를 렌더합니다.
 
@@ -79,28 +79,60 @@ Click 👉 [API 전체 명세 링크](https://principled-gorgonzola-3a1.notion.s
 ### 5.2. 회원가입
 ### 5.2.1 이메일 인증
 
-- **이메일 인증 요청 처리** :pushpin: [코드 확인](https://github.com/nyondoo/momoa/blob/f1ee8b3df44be9bfad4b5c91c54810878003842f/server/controller/Csignup.js#L29)
+- **이메일 인증 요청 처리** :pushpin: [코드 확인](https://github.com/nyondoo/momoa/blob/347d1d57ed1143cc73aa6b7cb4ca1ff381a2c043/server/controller/Csignup.js#L29)
   - 이메일 중복검사 통과 시 6자리의 숫자로 구성된 인증코드를 생성합니다.
   - 생성한 인증코드를 nodemailer를 통해 사용자가 입력한 이메일로 발송합니다. 
 
   - if문으로 인증코드 만료/불일치/성공의 경우로 예외처리 합니다.
  
-- **결과 응답** :pushpin: [코드 확인](https://github.com/nyondoo/mileeasy/blob/2961f19f5153e97090b62d15a886ee0ad1d3bbfc/controller/Cmbti_test.js#L81)
+- **결과 응답** :pushpin: [코드 확인](https://github.com/nyondoo/momoa/blob/347d1d57ed1143cc73aa6b7cb4ca1ff381a2c043/server/controller/Csignup.js#L56)
   - 이메일 입력 후 인증코드 입력창을 렌더합니다.
  
  </br>
  
  ### 5.2.2 회원가입 및 로그인
 
-- **인증코드 확인/회원가입 요청처리** :pushpin: [코드 확인](https://github.com/nyondoo/momoa/blob/f1ee8b3df44be9bfad4b5c91c54810878003842f/server/controller/Csignup.js#L73)
+- **인증코드 확인/회원가입 요청처리** :pushpin: [코드 확인](https://github.com/nyondoo/momoa/blob/347d1d57ed1143cc73aa6b7cb4ca1ff381a2c043/server/controller/Csignup.js#L72)
   - 사용자가 입력한 인증코드를 확인합니다. 
   - POST요청으로 넘어온 유저정보를 DB에 저장합니다.
   - JWT토큰을 발급하고 access토큰은 localstorage에, refresh토큰은 DB 유저정보에 저장합니다.
   - try-catch 문으로 예외처리 합니다.
  
-- **결과 응답** :pushpin: [코드 확인](https://github.com/nyondoo/mileeasy/blob/2961f19f5153e97090b62d15a886ee0ad1d3bbfc/controller/Cmbti_test.js#L81)
+- **결과 응답** :pushpin: [코드 확인](https://github.com/nyondoo/momoa/blob/347d1d57ed1143cc73aa6b7cb4ca1ff381a2c043/server/controller/Csignup.js#L77)
   - 인증코드 검사 통과 시 유저 정보 입력화면을 렌더합니다. 
   - 로그인 완료시 메인 화면을 렌더합니다.
+
+</br>
+
+### 5.3. 가계부 그래프 데이터 가공
+
+- **함수 선언** :pushpin: [코드 확인](https://github.com/nyondoo/momoa/blob/347d1d57ed1143cc73aa6b7cb4ca1ff381a2c043/server/controller/CSheetData.js#L12)
+  - DB에서 현재 연도로 조회하여 {작성일자, 금액}데이터를 요소로 갖는 배열을 매개변수로 받는 함수를 선언합니다.
+
+- **개별 데이터를 월별로 합치기** :pushpin: [코드 확인](https://github.com/nyondoo/momoa/blob/347d1d57ed1143cc73aa6b7cb4ca1ff381a2c043/server/controller/CSheetData.js#L16)
+  - 빈 배열 months에 중복되지 않게 월 값을 넣습니다.
+  - reduce() 메소드를 사용하여 같은 달의 금액을 합산합니다.
+  - map()메소드를 사용하여 {x:월, y:금액} 형태의 객체를 생성합니다.
+ 
+- **결과 응답** :pushpin: [코드 확인](https://github.com/nyondoo/momoa/blob/347d1d57ed1143cc73aa6b7cb4ca1ff381a2c043/server/controller/CSheetData.js#L47)
+  - 현재일자 기준 연도값으로 DB에서 수입/지출 데이터를 검색해 결과를 위에서 선언한 함수의 매개변수로 넘깁니다.
+  - {incomeArr: 수입데이터, spendArr: 지출 데이터} 형식으로 응답을 보냅니다.
+  - try-catch문으로 에러처리 하였습니다.
+
+</br>
+
+
+### 5.4. 가계부 공유, 승인/거절 처리
+
+- **가계부 초대** :pushpin: [코드 확인](https://github.com/nyondoo/momoa/blob/347d1d57ed1143cc73aa6b7cb4ca1ff381a2c043/server/controller/CSheetData.js#L94)
+  - DB의 `DBhub`테이블에 사용자의 `user_email`과 공유할 가계부의 `sheet_id`값에 해당하는 컬럼에 `guest`값으로 초대할 회원의 email을, `auth`값으로 2:`false`값을 update합니다.
+  - 공유할 가계부 정보, 최초 작성자, 초대된 사용자의 정보를 DB에 저장하되 권한을 부여하지 않은 상태입니다.
+  - 초대 받은 사용자가 로그인 시 마이페이지에 해당 초대 알림이 표시됩니다.
+
+- **초대 승인/거절 처리** :pushpin: [코드 확인](https://github.com/nyondoo/momoa/blob/347d1d57ed1143cc73aa6b7cb4ca1ff381a2c043/server/controller/CSheetData.js#L117)
+  - 요청 시 승인의 경우 `Y`값을, 거절의 경우 `N`값을 담아옵니다.
+  - 승인의 경우 `DBhub`테이블에서 초대받은 사용자의 이메일 값인 `guest`, 해당 가계부의 `sheet_id` 컬럼의 `auth`값을 1:`true`로 변경합니다.
+  - 거절의 경우 `DBhub`테이블에서 초대받은 사용자의 이메일 값인 `guest`, 해당 가계부의 `sheet_id` 컬럼의 `guest`값을 null로 변경합니다.
 
 </div>
 
