@@ -1,0 +1,15 @@
+module.exports = {
+  fetchgoal: `${process.env.REACT_APP_SERVER_IP}/api/goal`,
+  fetchGraph: `${process.env.REACT_APP_SERVER_IP}/api/sheetdata`,
+  login: `${process.env.REACT_APP_SERVER_IP}/api/signin`,
+  logout: `${process.env.REACT_APP_SERVER_IP}/api/logout`,
+  codeConfirm: `${process.env.REACT_APP_SERVER_IP}/api/signup`,
+  createAccount: `${process.env.REACT_APP_SERVER_IP}/api/check-email`,
+  fetchCalendar: `${process.env.REACT_APP_SERVER_IP}/api/calendar`,
+  finalSignup: `${process.env.REACT_APP_SERVER_IP}/api/signup2`,
+  eventHandle: `${process.env.REACT_APP_SERVER_IP}/api/users`,
+  getSheetData: `${process.env.REACT_APP_SERVER_IP}/api/sheetdata`,
+  interceptor1: `${process.env.REACT_APP_SERVER_IP}/api/verify`,
+  interceptor2: `${process.env.REACT_APP_SERVER_IP}/api/token`,
+  getAccesstoken: `${process.env.REACT_APP_SERVER_IP}/api/kakao`,
+};

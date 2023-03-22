@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <button onclick="getSheetData()">가계부 불러오기</button>
+    <script>
+      function getSheetData() {
+        axios({
+          url: '/api/getsheetdata',
+          method: 'get',
+          data: {
+            sheet_id: 'dkdsu',
+          },
+        }).then((res) => {
+          console.log(res.data);
+        });
+      }
+    </script>
+  </body>
+</html>

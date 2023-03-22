@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "input_date": "2023-02-10",
+    "type": 1,
+    "money": 10000,
+    "category": "급여",
+    "memo": "2월 월급"
+  },
+  {
+    "id": 2,
+    "input_date": "2023-02-04",
+    "type": 1,
+    "money": 50000,
+    "category": "용돈",
+    "memo": "새뱃돈"
+  },
+  {
+    "id": 3,
+    "input_date": "2023-02-22",
+    "type": 1,
+    "money": 10000,
+    "category": "금융수입",
+    "memo": "현대차 주식배당금"
+  },
+  {
+    "id": 4,
+    "input_date": "2023-02-07",
+    "type": 1,
+    "money": 10000,
+    "category": "금융수입",
+    "memo": "삼성 주식배당금"
+  },
+  {
+    "id": 5,
+    "input_date": "2023-02-07",
+    "type": 2,
+    "money": -10000,
+    "category": "식비",
+    "memo": "점심밥"
+  },
+  {
+    "id": 6,
+    "input_date": "2023-02-27",
+    "type": 2,
+    "money": -40000,
+    "category": "통신",
+    "memo": "핸드폰 요금"
+  }
+]

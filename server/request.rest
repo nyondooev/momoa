@@ -1,0 +1,95 @@
+GET http://localhost:5000/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoiYWhmbDExMjlAaGFubWFpbC5uZXQiLCJ1c2VyX25hbWUiOiLrh6zsiJgiLCJpYXQiOjE2NzcxMzExMjQsImV4cCI6MTY3NzEzMTE0NH0.q6gKS4IrhbMiIuwoIESMQIZEXF6LJXkYjFlSQGaizKM
+###
+POST http://localhost:5000/api/users
+Content-Type:application/json
+
+{ 
+    "user_email":"momoa3@gmail.com",
+    "user_name":"momoa3",
+    "user_pw":"12345",
+    "confPassword":"12345"
+
+}
+
+//로그인
+###
+POST http://3.38.103.41:5000/api/signin
+Content-Type:application/json
+
+{ 
+
+    "user_email":"momoa3@gmail.com",
+    "user_pw":"12345qwert"
+
+}
+
+//리프레쉬토큰 ->액세스토큰갱신
+###
+GET http://localhost:5000/api/token
+
+###
+DELETE http://localhost:5000/api/logout
+
+
+//카카오로그인
+###
+POST http://localhost:5000/api/getkakao
+Content-Type:application/json
+
+{ 
+    "user_email":"laura1129@naver.com"
+    
+}
+
+
+
+//getsheetid불러오기
+###
+GET http://localhost:5000/api/getsheetid
+Content-Type:application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibW9tb2EzQGdtYWlsLmNvbSIsInVzZXJfbmFtZSI6IuyDgeuMgOuwqSIsImlhdCI6MTY3NzI5MDYzOCwiZXhwIjoxNjc3MjkxODM4fQ.yBSmvP14P3hDLiAES9hujURDjR9F4i287kfYrZQ-S-8
+//개인정보불러오기
+###
+GET http://localhost:5000/api/getpersonalinfo
+Content-Type:application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibW9tb2E0QGdtYWlsLmNvbSIsInVzZXJfbmFtZSI6ImttaiIsImlhdCI6MTY3NzI4ODk2OSwiZXhwIjoxNjc3MjkwMTY5fQ.xnII7twoZNpOKd_eGoHdeXIAGHF9bk2dKGoOrKWz2gk
+
+###
+POST http://localhost:5000/api/writegoal
+Content-Type:application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibW9tb2E0QGdtYWlsLmNvbSIsInVzZXJfbmFtZSI6ImttaiIsImlhdCI6MTY3NzIyMjk2OCwiZXhwIjoxNjc3MjI0MTY4fQ.sNlIF7xbl0x4x0-8i8vB9DTldjVyAj5RtzDY-UIjuvw
+
+{ 
+
+    "goal": "123"
+
+}
+
+
+###
+POST http://localhost:5000/api/writegoal
+Content-Type:application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibW9tb2E0QGdtYWlsLmNvbSIsInVzZXJfbmFtZSI6ImttaiIsImlhdCI6MTY3NzIyMzE2NSwiZXhwIjoxNjc3MjI0MzY1fQ.P0aOdyYpN-2aBKwpi6iN8w7fBkPUQ7pQRpJF385D2eA
+
+{ 
+    "goal": "123"
+
+}
+
+//유저이메일 검색하는 
+###
+GET http://localhost:5000/api/getUserByEmail
+Content-Type:application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibW9tb2E0QGdtYWlsLmNvbSIsInVzZXJfbmFtZSI6ImttaiIsImlhdCI6MTY3NzIyNTE5MywiZXhwIjoxNjc3MjI2MzkzfQ.zdOotS_P-7qwWAOMBWx5rnWgW-mNjecNiLwKE6kHb-g
+
+//유저이메일 검색하는 
+###
+POST http://localhost:5000/api/createSheet
+Content-Type:application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2VtYWlsIjoibW9tb2E0QGdtYWlsLmNvbSIsInVzZXJfbmFtZSI6ImttaiIsImlhdCI6MTY3NzI4NDM4NSwiZXhwIjoxNjc3Mjg1NTg1fQ.bZn6xK3unFfFO090_W9S5eU6C_VBX54igG4lnMMl6-M
+
+{ 
+     "sheet_name": "dfdfdf",
+     "auth":"0"
+}
