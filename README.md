@@ -1,5 +1,3 @@
-# momoa
-공유가계부 서비스 모모아
 # :pushpin: Momoa
 >공유 가계부 서비스
  
